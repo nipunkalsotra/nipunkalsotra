@@ -198,12 +198,11 @@ I've grouped these by what I actually reach for, not by what I've once installed
 ## By the numbers
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=nipunkalsotra&show_icons=true&hide_border=true&bg_color=0d1117&title_color=00D9FF&text_color=a9bad6&icon_color=836EF9&include_all_commits=true&count_private=true" height="165">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nipunkalsotra&layout=compact&hide_border=true&bg_color=0d1117&title_color=00D9FF&text_color=a9bad6&langs_count=8" height="165">
+  <img src="assets/stats.svg" alt="183 commits authored across 15 public repositories, 4 multi-agent systems, 12 months building" width="100%">
 </div>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=nipunkalsotra&hide_border=true&background=0d1117&stroke=1e2536&ring=00D9FF&fire=836EF9&currStreakLabel=00D9FF&sideLabels=a9bad6&dates=5f74a0&currStreakNum=f2f6ff&sideNums=f2f6ff" height="165">
+<sub>Commit count is <b>mine specifically</b> — 183 of the 266 across these repos. Language mix measured by bytes.</sub>
 </div>
 
 <br>
