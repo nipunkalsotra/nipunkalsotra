@@ -1,0 +1,286 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1200 340" width="1200" height="340" role="img"
+     aria-label="Nipun Kalsotra — I build autonomous systems that can prove what they did.">
+  <title>Nipun Kalsotra — autonomous systems that can prove what they did</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#04050a"/>
+      <stop offset="48%" stop-color="#0a0e1a"/>
+      <stop offset="100%" stop-color="#05060c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#836EF9"/>
+    </linearGradient>
+    <!-- user-space so horizontal edges (zero-height bbox) still render -->
+    <linearGradient id="edgeGrad" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1090" y2="0">
+      <stop offset="0%"   stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#836EF9"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#00D9FF" stop-opacity=".95"/>
+      <stop offset="55%"  stop-color="#836EF9" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#836EF9" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#7FE9FF" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#7FE9FF" stop-opacity=".13"/>
+      <stop offset="100%" stop-color="#7FE9FF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="au1" cx="50%" cy="50%">
+      <stop offset="0%"   stop-color="#836EF9" stop-opacity=".50"/>
+      <stop offset="100%" stop-color="#836EF9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="au2" cx="50%" cy="50%">
+      <stop offset="0%"   stop-color="#00D9FF" stop-opacity=".40"/>
+      <stop offset="100%" stop-color="#00D9FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="50%">
+      <stop offset="55%"  stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity=".55"/>
+    </radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.6"/>
+    </filter>
+    <g id="edgedefs">
+      <path id="e1" d="M770,170 L872,96"/>
+      <path id="e2" d="M770,170 L872,244"/>
+      <path id="e3" d="M872,96 L974,170"/>
+      <path id="e4" d="M872,244 L974,170"/>
+      <path id="e5" d="M974,170 L1082,170"/>
+    </g>
+  </defs>
+
+  <style>
+    /* Base states are the FINAL states, animations use fill-mode:backwards.
+       If a renderer ignores animation, the art still reads correctly. */
+    .fu { animation: fu .9s cubic-bezier(.16,.84,.34,1) backwards; animation-delay: var(--dly,0s); }
+    @keyframes fu { from { opacity:0; transform: translateY(14px); } to { opacity:1; transform: none; } }
+
+    .st { fill:#cfe9ff; opacity:var(--op);
+          animation: tw var(--dur) ease-in-out infinite var(--dly), dr 40s linear infinite var(--dly); }
+    @keyframes tw { 0%,100%{opacity:calc(var(--op)*.28)} 50%{opacity:var(--op)} }
+    @keyframes dr { from{transform:translateX(0)} to{transform:translateX(var(--dx))} }
+
+    .mote { fill:#9fd8ff; opacity:0; filter:url(#soft);
+            animation: float var(--dur) ease-in-out infinite var(--dly); }
+    @keyframes float {
+      0%{opacity:0; transform:translate(0,0)} 18%{opacity:.5}
+      82%{opacity:.5} 100%{opacity:0; transform:translate(22px,-30px)} }
+
+    .aurora { animation: breathe 13s ease-in-out infinite; transform-origin:center; }
+    @keyframes breathe { 0%,100%{transform:scale(1) translateX(0); opacity:.85}
+                         50%{transform:scale(1.13) translateX(-16px); opacity:1} }
+
+    .grid { stroke:#7ea8d8; stroke-opacity:.055; stroke-width:1; }
+
+    .edge { fill:none; stroke:url(#edgeGrad); stroke-width:1.5; stroke-opacity:.55;
+            stroke-dasharray:210; stroke-dashoffset:0;
+            animation: draw 1.1s cubic-bezier(.22,.9,.3,1) backwards var(--dly); }
+    @keyframes draw { from { stroke-dashoffset:210; } to { stroke-dashoffset:0; } }
+
+    .handoff { fill:none; stroke:#836EF9; stroke-opacity:.3; stroke-width:1.2;
+               stroke-dasharray:4 5; animation: march 2.4s linear infinite; }
+    @keyframes march { to { stroke-dashoffset:-18; } }
+
+    .pulse { fill:#8CF3FF; filter:url(#glow); opacity:0; }
+
+    .node { animation: pop .7s cubic-bezier(.2,1.3,.4,1) backwards var(--dly); }
+    @keyframes pop { from{opacity:0; transform:scale(.4)} to{opacity:1; transform:none} }
+    .ring { fill:#080c16; stroke:url(#accent); stroke-width:1.8; }
+    .core { fill:#8CF3FF; }
+    .halo { fill:none; stroke:#00D9FF; stroke-width:1.1; opacity:0;
+            animation: ripple 3.6s ease-out infinite var(--dly);
+            transform-origin:center; transform-box:fill-box; }
+    @keyframes ripple { 0%{opacity:.55; transform:scale(.55)} 70%{opacity:0; transform:scale(1.35)} 100%{opacity:0} }
+
+    .blk { fill:#0d1424; stroke:#2a3a5c; stroke-width:1;
+           animation: commit .8s ease-out backwards var(--dly), glowpulse 6s ease-in-out infinite var(--dly); }
+    @keyframes commit { from{opacity:0; transform:translateY(7px)} to{opacity:1; transform:none} }
+    @keyframes glowpulse { 0%,88%,100%{stroke:#2a3a5c} 94%{stroke:#00D9FF} }
+    .lnk { stroke:#2a3a5c; stroke-width:1.4; animation: fadein .6s backwards var(--dly); }
+    @keyframes fadein { from { opacity:0 } to { opacity:1 } }
+
+    .scanbar { animation: sweep 8.5s cubic-bezier(.5,0,.5,1) infinite; }
+    @keyframes sweep { 0%{transform:translateX(-320px)} 100%{transform:translateX(1240px)} }
+
+    .eyebrow { font: 600 11.5px ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace;
+               fill:#00D9FF; letter-spacing:4.2px; }
+    .name    { font: 800 55px system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;
+               fill:#f2f6ff; letter-spacing:1.5px; }
+    .tag     { font: 400 19px system-ui,-apple-system,'Segoe UI',Roboto,sans-serif; fill:#a9bad6; }
+    .mono    { font: 400 12px ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+               fill:#5f74a0; letter-spacing:.6px; }
+    .cap     { font: 600 9.5px ui-monospace,Menlo,Consolas,monospace; fill:#6b82ad; letter-spacing:2.4px; }
+
+    .hashrow text { opacity:0; animation: cyc 9s steps(1,end) infinite; }
+    .hashrow text:nth-child(1) { opacity:.85; animation-delay: 0s; }
+    .hashrow text:nth-child(2) { animation-delay: 3s; }
+    .hashrow text:nth-child(3) { animation-delay: 6s; }
+    @keyframes cyc { 0%{opacity:0} 2%{opacity:.85} 31%{opacity:.85} 34%{opacity:0} 100%{opacity:0} }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration:.01ms !important; animation-iteration-count:1 !important; }
+      .hashrow text:nth-child(2), .hashrow text:nth-child(3) { display:none; }
+      .hashrow text:nth-child(1) { opacity:.85 !important; }
+    }
+  </style>
+
+  <rect width="1200" height="340" fill="url(#bg)"/>
+
+  <g class="aurora">
+    <ellipse cx="960" cy="150" rx="330" ry="200" fill="url(#au1)"/>
+    <ellipse cx="250" cy="250" rx="300" ry="180" fill="url(#au2)"/>
+  </g>
+
+  <g class="grid">
+    <path d="M0 60.5H1200M0 130.5H1200M0 200.5H1200M0 270.5H1200"/>
+    <path d="M120.5 0V340M280.5 0V340M440.5 0V340M600.5 0V340M760.5 0V340M920.5 0V340M1080.5 0V340"/>
+  </g>
+
+  <g>
+    <circle class="st d2" cx="388.6" cy="51.3" r="1.6" style="--op:0.55;--dur:2.78s;--dly:4.11s;--dx:84px"/>
+    <circle class="st d2" cx="113.0" cy="198.1" r="1.6" style="--op:0.55;--dur:3.42s;--dly:0.43s;--dx:84px"/>
+    <circle class="st d2" cx="501.8" cy="81.8" r="1.6" style="--op:0.55;--dur:4.21s;--dly:4.13s;--dx:84px"/>
+    <circle class="st d2" cx="148.6" cy="75.9" r="1.6" style="--op:0.55;--dur:4.82s;--dly:0.31s;--dx:84px"/>
+    <circle class="st d0" cx="702.6" cy="16.9" r="0.7" style="--op:0.22;--dur:2.78s;--dly:4.29s;--dx:26px"/>
+    <circle class="st d0" cx="347.5" cy="49.0" r="0.7" style="--op:0.22;--dur:4.77s;--dly:2.80s;--dx:26px"/>
+    <circle class="st d2" cx="818.4" cy="35.0" r="1.6" style="--op:0.55;--dur:5.03s;--dly:1.86s;--dx:84px"/>
+    <circle class="st d0" cx="657.3" cy="21.3" r="0.7" style="--op:0.22;--dur:4.95s;--dly:2.48s;--dx:26px"/>
+    <circle class="st d1" cx="638.1" cy="264.3" r="1.1" style="--op:0.38;--dur:4.83s;--dly:2.27s;--dx:52px"/>
+    <circle class="st d2" cx="359.7" cy="270.1" r="1.6" style="--op:0.55;--dur:5.56s;--dly:0.41s;--dx:84px"/>
+    <circle class="st d1" cx="360.3" cy="168.3" r="1.1" style="--op:0.38;--dur:5.37s;--dly:1.44s;--dx:52px"/>
+    <circle class="st d1" cx="1176.2" cy="40.1" r="1.1" style="--op:0.38;--dur:3.23s;--dly:1.71s;--dx:52px"/>
+    <circle class="st d2" cx="1119.9" cy="143.4" r="1.6" style="--op:0.55;--dur:2.89s;--dly:2.79s;--dx:84px"/>
+    <circle class="st d1" cx="946.9" cy="278.2" r="1.1" style="--op:0.38;--dur:5.24s;--dly:2.97s;--dx:52px"/>
+    <circle class="st d0" cx="695.9" cy="155.1" r="0.7" style="--op:0.22;--dur:6.19s;--dly:2.37s;--dx:26px"/>
+    <circle class="st d2" cx="797.0" cy="20.6" r="1.6" style="--op:0.55;--dur:3.78s;--dly:2.89s;--dx:84px"/>
+    <circle class="st d2" cx="817.5" cy="151.5" r="1.6" style="--op:0.55;--dur:4.07s;--dly:3.34s;--dx:84px"/>
+    <circle class="st d0" cx="27.1" cy="157.0" r="0.7" style="--op:0.22;--dur:4.92s;--dly:2.47s;--dx:26px"/>
+    <circle class="st d2" cx="261.8" cy="97.7" r="1.6" style="--op:0.55;--dur:3.54s;--dly:1.95s;--dx:84px"/>
+    <circle class="st d1" cx="1045.7" cy="27.4" r="1.1" style="--op:0.38;--dur:4.13s;--dly:1.39s;--dx:52px"/>
+    <circle class="st d2" cx="164.3" cy="146.4" r="1.6" style="--op:0.55;--dur:3.66s;--dly:2.08s;--dx:84px"/>
+    <circle class="st d0" cx="430.5" cy="300.6" r="0.7" style="--op:0.22;--dur:3.17s;--dly:0.88s;--dx:26px"/>
+    <circle class="st d1" cx="278.3" cy="79.3" r="1.1" style="--op:0.38;--dur:5.76s;--dly:0.91s;--dx:52px"/>
+    <circle class="st d2" cx="338.3" cy="49.5" r="1.6" style="--op:0.55;--dur:4.00s;--dly:2.83s;--dx:84px"/>
+    <circle class="st d2" cx="1143.7" cy="234.8" r="1.6" style="--op:0.55;--dur:6.21s;--dly:3.27s;--dx:84px"/>
+    <circle class="st d2" cx="887.7" cy="155.3" r="1.6" style="--op:0.55;--dur:5.63s;--dly:1.96s;--dx:84px"/>
+    <circle class="st d2" cx="478.8" cy="35.2" r="1.6" style="--op:0.55;--dur:4.12s;--dly:0.95s;--dx:84px"/>
+    <circle class="st d0" cx="1181.6" cy="149.8" r="0.7" style="--op:0.22;--dur:3.89s;--dly:0.26s;--dx:26px"/>
+    <circle class="st d0" cx="0.3" cy="51.4" r="0.7" style="--op:0.22;--dur:6.21s;--dly:3.07s;--dx:26px"/>
+    <circle class="st d1" cx="84.4" cy="70.7" r="1.1" style="--op:0.38;--dur:3.16s;--dly:1.26s;--dx:52px"/>
+    <circle class="st d0" cx="416.9" cy="123.8" r="0.7" style="--op:0.22;--dur:3.04s;--dly:2.44s;--dx:26px"/>
+    <circle class="st d1" cx="1173.4" cy="163.3" r="1.1" style="--op:0.38;--dur:2.93s;--dly:0.51s;--dx:52px"/>
+    <circle class="st d2" cx="411.2" cy="90.0" r="1.6" style="--op:0.55;--dur:3.21s;--dly:0.12s;--dx:84px"/>
+    <circle class="st d0" cx="1141.2" cy="179.6" r="0.7" style="--op:0.22;--dur:5.22s;--dly:4.57s;--dx:26px"/>
+    <circle class="st d2" cx="909.8" cy="101.4" r="1.6" style="--op:0.55;--dur:5.88s;--dly:3.48s;--dx:84px"/>
+    <circle class="st d0" cx="313.3" cy="124.7" r="0.7" style="--op:0.22;--dur:3.95s;--dly:1.11s;--dx:26px"/>
+    <circle class="st d2" cx="649.9" cy="170.9" r="1.6" style="--op:0.55;--dur:3.45s;--dly:4.06s;--dx:84px"/>
+    <circle class="st d0" cx="1181.9" cy="289.9" r="0.7" style="--op:0.22;--dur:5.71s;--dly:3.70s;--dx:26px"/>
+    <circle class="st d1" cx="272.1" cy="176.0" r="1.1" style="--op:0.38;--dur:5.38s;--dly:4.95s;--dx:52px"/>
+    <circle class="st d0" cx="948.1" cy="160.6" r="0.7" style="--op:0.22;--dur:5.23s;--dly:4.78s;--dx:26px"/>
+    <circle class="st d1" cx="536.7" cy="318.6" r="1.1" style="--op:0.38;--dur:6.23s;--dly:1.82s;--dx:52px"/>
+    <circle class="st d0" cx="264.6" cy="77.1" r="0.7" style="--op:0.22;--dur:3.88s;--dly:2.41s;--dx:26px"/>
+    <circle class="st d0" cx="1182.3" cy="207.5" r="0.7" style="--op:0.22;--dur:4.42s;--dly:3.26s;--dx:26px"/>
+    <circle class="st d2" cx="959.6" cy="28.8" r="1.6" style="--op:0.55;--dur:3.06s;--dly:1.94s;--dx:84px"/>
+    <circle class="st d0" cx="853.8" cy="67.8" r="0.7" style="--op:0.22;--dur:4.25s;--dly:3.18s;--dx:26px"/>
+    <circle class="st d2" cx="104.1" cy="321.7" r="1.6" style="--op:0.55;--dur:4.10s;--dly:2.01s;--dx:84px"/>
+    <circle class="st d0" cx="1136.2" cy="246.4" r="0.7" style="--op:0.22;--dur:6.37s;--dly:0.14s;--dx:26px"/>
+    <circle class="st d2" cx="709.0" cy="158.2" r="1.6" style="--op:0.55;--dur:3.16s;--dly:4.13s;--dx:84px"/>
+    <circle class="st d1" cx="1176.4" cy="223.5" r="1.1" style="--op:0.38;--dur:3.19s;--dly:2.74s;--dx:52px"/>
+    <circle class="st d2" cx="25.7" cy="271.8" r="1.6" style="--op:0.55;--dur:5.07s;--dly:2.63s;--dx:84px"/>
+    <circle class="st d0" cx="1120.3" cy="147.5" r="0.7" style="--op:0.22;--dur:5.74s;--dly:1.06s;--dx:26px"/>
+    <circle class="st d0" cx="302.2" cy="99.6" r="0.7" style="--op:0.22;--dur:5.50s;--dly:1.63s;--dx:26px"/>
+    <circle class="st d0" cx="653.2" cy="283.6" r="0.7" style="--op:0.22;--dur:6.06s;--dly:1.77s;--dx:26px"/>
+    <circle class="st d2" cx="549.8" cy="198.3" r="1.6" style="--op:0.55;--dur:4.20s;--dly:4.59s;--dx:84px"/>
+    <circle class="st d2" cx="602.0" cy="180.8" r="1.6" style="--op:0.55;--dur:4.54s;--dly:4.36s;--dx:84px"/>
+    <circle class="st d0" cx="931.8" cy="206.9" r="0.7" style="--op:0.22;--dur:3.25s;--dly:2.37s;--dx:26px"/>
+    <circle class="st d1" cx="870.2" cy="189.2" r="1.1" style="--op:0.38;--dur:5.19s;--dly:2.65s;--dx:52px"/>
+    <circle class="st d2" cx="579.0" cy="264.0" r="1.6" style="--op:0.55;--dur:2.82s;--dly:0.96s;--dx:84px"/>
+    <circle class="st d1" cx="50.6" cy="33.2" r="1.1" style="--op:0.38;--dur:4.73s;--dly:3.80s;--dx:52px"/>
+    <circle class="st d2" cx="1095.0" cy="150.7" r="1.6" style="--op:0.55;--dur:6.30s;--dly:3.03s;--dx:84px"/>
+    <circle class="st d2" cx="239.3" cy="94.2" r="1.6" style="--op:0.55;--dur:4.63s;--dly:2.39s;--dx:84px"/>
+    <circle class="st d1" cx="1129.8" cy="237.7" r="1.1" style="--op:0.38;--dur:6.11s;--dly:4.46s;--dx:52px"/>
+    <circle class="st d1" cx="243.1" cy="152.2" r="1.1" style="--op:0.38;--dur:3.06s;--dly:2.21s;--dx:52px"/>
+    <circle class="st d0" cx="87.1" cy="81.8" r="0.7" style="--op:0.22;--dur:3.41s;--dly:1.51s;--dx:26px"/>
+    <circle class="st d2" cx="146.8" cy="264.2" r="1.6" style="--op:0.55;--dur:5.05s;--dly:1.83s;--dx:84px"/>
+    <circle class="st d1" cx="303.7" cy="46.7" r="1.1" style="--op:0.38;--dur:3.43s;--dly:4.76s;--dx:52px"/>
+    <circle class="st d2" cx="477.9" cy="165.7" r="1.6" style="--op:0.55;--dur:5.76s;--dly:0.81s;--dx:84px"/>
+    <circle class="st d1" cx="517.8" cy="175.3" r="1.1" style="--op:0.38;--dur:4.20s;--dly:1.78s;--dx:52px"/>
+    <circle class="st d1" cx="110.6" cy="124.4" r="1.1" style="--op:0.38;--dur:4.71s;--dly:2.20s;--dx:52px"/>
+    <circle class="st d2" cx="21.7" cy="112.7" r="1.6" style="--op:0.55;--dur:3.72s;--dly:4.80s;--dx:84px"/>
+  </g>
+
+  <!-- pipeline -->
+  <g>
+    <line class="handoff" x1="872" y1="96" x2="872" y2="244"/>
+    <use href="#e1" class="edge" style="--dly:0.55s"/>
+    <use href="#e2" class="edge" style="--dly:0.68s"/>
+    <use href="#e3" class="edge" style="--dly:0.81s"/>
+    <use href="#e4" class="edge" style="--dly:0.94s"/>
+    <use href="#e5" class="edge" style="--dly:1.07s"/>
+    <circle class="pulse" r="3.4"><animateMotion dur="3.4s" begin="1.80s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#e1"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="3.4s" begin="1.80s" repeatCount="indefinite"/></circle>
+    <circle class="pulse" r="3.4"><animateMotion dur="3.4s" begin="2.14s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#e2"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="3.4s" begin="2.14s" repeatCount="indefinite"/></circle>
+    <circle class="pulse" r="3.4"><animateMotion dur="3.4s" begin="2.48s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#e3"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="3.4s" begin="2.48s" repeatCount="indefinite"/></circle>
+    <circle class="pulse" r="3.4"><animateMotion dur="3.4s" begin="2.82s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#e4"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="3.4s" begin="2.82s" repeatCount="indefinite"/></circle>
+    <circle class="pulse" r="3.4"><animateMotion dur="3.4s" begin="3.16s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#e5"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="3.4s" begin="3.16s" repeatCount="indefinite"/></circle>
+    <g class="node" style="--dly:0.75s"><circle class="halo" cx="770" cy="170" r="22" style="--dly:0.00s"/><circle class="ring" cx="770" cy="170" r="13"/><circle class="core" cx="770" cy="170" r="6.8"/></g>
+    <g class="node" style="--dly:0.86s"><circle class="halo" cx="872" cy="96" r="19" style="--dly:0.50s"/><circle class="ring" cx="872" cy="96" r="10"/><circle class="core" cx="872" cy="96" r="3.8"/></g>
+    <g class="node" style="--dly:0.97s"><circle class="halo" cx="872" cy="244" r="19" style="--dly:1.00s"/><circle class="ring" cx="872" cy="244" r="10"/><circle class="core" cx="872" cy="244" r="3.8"/></g>
+    <g class="node" style="--dly:1.08s"><circle class="halo" cx="974" cy="170" r="19" style="--dly:1.50s"/><circle class="ring" cx="974" cy="170" r="10"/><circle class="core" cx="974" cy="170" r="3.8"/></g>
+    <g class="node" style="--dly:1.19s"><circle class="halo" cx="1082" cy="170" r="22" style="--dly:2.00s"/><circle class="ring" cx="1082" cy="170" r="13"/><circle class="core" cx="1082" cy="170" r="6.8"/></g>
+    <line class="lnk" x1="1082" y1="184" x2="1082" y2="294" style="--dly:2.0s"/>
+    <rect class="blk" x="770" y="298" width="52" height="14" rx="3.5" style="--dly:2.10s"/>
+    <line class="lnk" x1="822" y1="305" x2="832" y2="305" style="--dly:2.20s"/>
+    <rect class="blk" x="832" y="298" width="52" height="14" rx="3.5" style="--dly:2.32s"/>
+    <line class="lnk" x1="884" y1="305" x2="894" y2="305" style="--dly:2.42s"/>
+    <rect class="blk" x="894" y="298" width="52" height="14" rx="3.5" style="--dly:2.54s"/>
+    <line class="lnk" x1="946" y1="305" x2="956" y2="305" style="--dly:2.64s"/>
+    <rect class="blk" x="956" y="298" width="52" height="14" rx="3.5" style="--dly:2.76s"/>
+    <line class="lnk" x1="1008" y1="305" x2="1018" y2="305" style="--dly:2.86s"/>
+    <rect class="blk" x="1018" y="298" width="52" height="14" rx="3.5" style="--dly:2.98s"/>
+    <line class="lnk" x1="1070" y1="305" x2="1080" y2="305" style="--dly:3.08s"/>
+    <rect class="blk" x="1080" y="298" width="52" height="14" rx="3.5" style="--dly:3.20s"/>
+    <text class="cap fu" x="770" y="286" style="--dly:2.0s">IMMUTABLE  LEDGER</text>
+    <text class="cap fu" x="770" y="72"  style="--dly:0.6s">AGENT  PIPELINE</text>
+  </g>
+
+  <g>
+    <circle class="mote" cx="181.9" cy="278.8" r="1.7" style="--dur:15.1s;--dly:0.7s"/>
+    <circle class="mote" cx="353.7" cy="275.5" r="1.6" style="--dur:14.3s;--dly:6.6s"/>
+    <circle class="mote" cx="977.6" cy="215.8" r="2.5" style="--dur:11.8s;--dly:4.3s"/>
+    <circle class="mote" cx="616.0" cy="168.6" r="1.8" style="--dur:11.0s;--dly:6.4s"/>
+    <circle class="mote" cx="258.0" cy="272.8" r="1.7" style="--dur:9.1s;--dly:0.7s"/>
+    <circle class="mote" cx="341.4" cy="198.1" r="1.7" style="--dur:10.9s;--dly:1.0s"/>
+    <circle class="mote" cx="72.5" cy="298.5" r="1.9" style="--dur:15.4s;--dly:5.0s"/>
+    <circle class="mote" cx="106.7" cy="224.5" r="2.5" style="--dur:15.8s;--dly:2.1s"/>
+    <circle class="mote" cx="255.6" cy="282.4" r="2.2" style="--dur:12.7s;--dly:1.6s"/>
+    <circle class="mote" cx="541.3" cy="214.8" r="1.7" style="--dur:14.6s;--dly:8.0s"/>
+    <circle class="mote" cx="99.9" cy="44.8" r="2.0" style="--dur:15.8s;--dly:4.1s"/>
+    <circle class="mote" cx="325.3" cy="156.2" r="2.2" style="--dur:13.6s;--dly:5.3s"/>
+    <circle class="mote" cx="649.6" cy="271.1" r="2.6" style="--dur:11.2s;--dly:1.7s"/>
+    <circle class="mote" cx="307.9" cy="91.6" r="2.5" style="--dur:14.1s;--dly:1.1s"/>
+  </g>
+
+  <!-- type -->
+  <g>
+    <text class="eyebrow fu" x="70" y="110" style="--dly:.15s">SYSTEMS  ·  AGENTS  ·  VERIFIABILITY</text>
+    <text class="name fu"    x="70" y="172" style="--dly:.28s">NIPUN KALSOTRA</text>
+    <rect class="fu" x="70" y="190" width="380" height="2" rx="1" fill="url(#rule)" style="--dly:.44s"/>
+    <text class="tag fu"     x="70" y="228" style="--dly:.56s">I build autonomous systems that can prove what they did.</text>
+    <g class="hashrow fu" style="--dly:.9s">
+      <text class="mono" x="70" y="264">sha256 · 9f2c4ae1…d70b   ✓ chain intact   ·   block 0x1a4f</text>
+      <text class="mono" x="70" y="264">agent.verifier → COMMIT   ✓ tx confirmed   ·   monad-testnet</text>
+      <text class="mono" x="70" y="264">fsm: DETECT → DIAGNOSE → PATCH → VERIFY   ✓ healed  ·  842ms</text>
+    </g>
+  </g>
+
+  <rect class="scanbar" x="0" y="0" width="320" height="340" fill="url(#scan)"/>
+  <rect width="1200" height="340" fill="url(#vig)"/>
+  <rect x="0" y="0" width="1200" height="1.5" fill="url(#accent)" opacity=".55"/>
+  <rect x="0" y="338.5" width="1200" height="1.5" fill="url(#accent)" opacity=".22"/>
+</svg>

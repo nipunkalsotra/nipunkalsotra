@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 312" width="1200" height="312"
+     role="img" aria-label="Twelve-month trajectory: from a 724-byte HTML page to multi-agent verifiable systems">
+  <title>Twelve months: 724 B of HTML to multi-agent verifiable systems</title>
+  <defs>
+    <linearGradient id="tbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#04050a"/><stop offset="60%" stop-color="#090d18"/>
+      <stop offset="100%" stop-color="#05060c"/>
+    </linearGradient>
+    <linearGradient id="rail" gradientUnits="userSpaceOnUse" x1="90" y1="0" x2="1110" y2="0">
+      <stop offset="0%"   stop-color="#1e4a63"/>
+      <stop offset="42%"  stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#B79CFF"/>
+    </linearGradient>
+    <linearGradient id="area" gradientUnits="userSpaceOnUse" x1="0" y1="60" x2="0" y2="312">
+      <stop offset="0%"   stop-color="#4d7fff" stop-opacity=".22"/>
+      <stop offset="100%" stop-color="#4d7fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="tau"><stop offset="0%" stop-color="#836EF9" stop-opacity=".34"/>
+      <stop offset="100%" stop-color="#836EF9" stop-opacity="0"/></radialGradient>
+    <filter id="tglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .st { fill:#cfe9ff; opacity:var(--op); animation: tw var(--dur) ease-in-out infinite var(--dly); }
+    @keyframes tw { 0%,100%{opacity:calc(var(--op)*.3)} 50%{opacity:var(--op)} }
+
+    .curve { fill:none; stroke:url(#rail); stroke-width:2.4; stroke-linecap:round;
+             stroke-dasharray:1129; stroke-dashoffset:0;
+             animation: drawc 2.6s cubic-bezier(.3,.8,.35,1) backwards .25s; }
+    @keyframes drawc { from { stroke-dashoffset:1129; } to { stroke-dashoffset:0; } }
+
+    .areafill { fill:url(#area); animation: fin 1.4s ease-out backwards 1.6s; }
+    @keyframes fin { from{opacity:0} to{opacity:1} }
+
+    .glint { fill:#CFF7FF; filter:url(#tglow); }
+
+    .nd { animation: pop .6s cubic-bezier(.2,1.35,.4,1) backwards var(--dly); }
+    @keyframes pop { from{opacity:0; transform:scale(.3)} to{opacity:1; transform:none} }
+    .ring { fill:#070b14; stroke:#57d7f5; stroke-width:1.9; }
+    .ring.last { stroke:#B79CFF; stroke-width:2.3; }
+    .core { fill:#8CF3FF; }
+    .ring.last ~ .core { fill:#D9CCFF; }
+    .tick { stroke:#2c3d5e; stroke-width:1.1; }
+    .now { fill:none; stroke:#B79CFF; stroke-width:1.4; opacity:0;
+           animation: ripple 2.8s ease-out infinite 2.4s; transform-origin:center; transform-box:fill-box; }
+    @keyframes ripple { 0%{opacity:.7; transform:scale(.5)} 75%{opacity:0; transform:scale(1.45)} 100%{opacity:0} }
+
+    .lb { animation: fu .7s ease-out backwards var(--dly); }
+    @keyframes fu { from{opacity:0; transform:translateY(9px)} to{opacity:1; transform:none} }
+
+    text { text-anchor:middle; }
+    .date { font: 600 9.5px ui-monospace,Menlo,Consolas,monospace; fill:#00D9FF; letter-spacing:1.8px; }
+    .ttl  { font: 700 13px system-ui,-apple-system,'Segoe UI',Roboto,sans-serif; fill:#e8eefc; }
+    .sub  { font: 400 9.5px ui-monospace,Menlo,Consolas,monospace; fill:#6f86ae; }
+    .cap  { font: 600 10px ui-monospace,Menlo,Consolas,monospace; fill:#5b6f96; letter-spacing:3px; text-anchor:start; }
+    .capr { text-anchor:end; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration:.01ms !important; animation-iteration-count:1 !important; }
+    }
+  </style>
+
+  <rect width="1200" height="312" fill="url(#tbg)"/>
+  <ellipse cx="1000" cy="110" rx="300" ry="170" fill="url(#tau)"/>
+  <g><circle class="st" cx="542.9" cy="174.6" r="1.4" style="--op:0.27;--dur:5.0s;--dly:2.9s"/>
+    <circle class="st" cx="221.6" cy="159.7" r="1.2" style="--op:0.35;--dur:3.4s;--dly:1.5s"/>
+    <circle class="st" cx="108.8" cy="252.6" r="1.2" style="--op:0.16;--dur:6.9s;--dly:4.8s"/>
+    <circle class="st" cx="784.7" cy="192.1" r="0.7" style="--op:0.15;--dur:5.1s;--dly:0.3s"/>
+    <circle class="st" cx="228.2" cy="75.5" r="0.6" style="--op:0.27;--dur:4.8s;--dly:4.2s"/>
+    <circle class="st" cx="622.9" cy="199.8" r="1.0" style="--op:0.32;--dur:4.8s;--dly:1.4s"/>
+    <circle class="st" cx="1197.2" cy="310.7" r="1.4" style="--op:0.33;--dur:4.3s;--dly:1.1s"/>
+    <circle class="st" cx="346.8" cy="21.9" r="1.3" style="--op:0.25;--dur:6.4s;--dly:1.9s"/>
+    <circle class="st" cx="1149.7" cy="264.4" r="0.6" style="--op:0.20;--dur:6.6s;--dly:2.3s"/>
+    <circle class="st" cx="1176.4" cy="124.0" r="0.7" style="--op:0.31;--dur:6.1s;--dly:1.3s"/>
+    <circle class="st" cx="104.6" cy="103.8" r="1.5" style="--op:0.34;--dur:3.5s;--dly:1.2s"/>
+    <circle class="st" cx="121.3" cy="18.7" r="1.3" style="--op:0.19;--dur:5.2s;--dly:2.2s"/>
+    <circle class="st" cx="228.8" cy="228.4" r="0.7" style="--op:0.31;--dur:3.5s;--dly:2.1s"/>
+    <circle class="st" cx="255.4" cy="84.2" r="1.5" style="--op:0.35;--dur:4.2s;--dly:4.4s"/>
+    <circle class="st" cx="252.9" cy="123.0" r="1.4" style="--op:0.31;--dur:3.4s;--dly:4.9s"/>
+    <circle class="st" cx="255.9" cy="80.6" r="1.3" style="--op:0.23;--dur:4.2s;--dly:0.4s"/>
+    <circle class="st" cx="108.1" cy="181.8" r="0.8" style="--op:0.30;--dur:4.5s;--dly:2.3s"/>
+    <circle class="st" cx="1151.0" cy="150.9" r="1.1" style="--op:0.37;--dur:3.7s;--dly:0.8s"/>
+    <circle class="st" cx="1090.1" cy="255.2" r="0.8" style="--op:0.20;--dur:6.0s;--dly:4.7s"/>
+    <circle class="st" cx="235.9" cy="296.4" r="1.4" style="--op:0.30;--dur:4.7s;--dly:0.5s"/>
+    <circle class="st" cx="46.4" cy="300.4" r="0.8" style="--op:0.33;--dur:4.0s;--dly:4.1s"/>
+    <circle class="st" cx="715.8" cy="91.6" r="0.8" style="--op:0.33;--dur:3.3s;--dly:1.1s"/>
+    <circle class="st" cx="671.2" cy="265.9" r="1.2" style="--op:0.22;--dur:6.7s;--dly:1.0s"/>
+    <circle class="st" cx="19.9" cy="84.0" r="1.0" style="--op:0.17;--dur:3.7s;--dly:1.8s"/>
+    <circle class="st" cx="686.6" cy="41.1" r="0.9" style="--op:0.37;--dur:6.9s;--dly:3.3s"/>
+    <circle class="st" cx="829.5" cy="182.3" r="0.7" style="--op:0.16;--dur:3.1s;--dly:4.6s"/>
+    <circle class="st" cx="841.2" cy="300.4" r="0.6" style="--op:0.31;--dur:4.9s;--dly:3.7s"/>
+    <circle class="st" cx="382.7" cy="311.8" r="0.7" style="--op:0.29;--dur:5.9s;--dly:4.5s"/>
+    <circle class="st" cx="884.5" cy="219.6" r="1.3" style="--op:0.38;--dur:4.4s;--dly:3.4s"/>
+    <circle class="st" cx="1081.0" cy="271.8" r="1.0" style="--op:0.35;--dur:6.5s;--dly:2.9s"/>
+    <circle class="st" cx="750.0" cy="119.3" r="1.1" style="--op:0.30;--dur:3.3s;--dly:3.2s"/>
+    <circle class="st" cx="1192.0" cy="274.5" r="1.3" style="--op:0.25;--dur:5.9s;--dly:2.9s"/>
+    <circle class="st" cx="528.6" cy="261.6" r="0.7" style="--op:0.34;--dur:3.1s;--dly:3.0s"/>
+    <circle class="st" cx="577.1" cy="71.8" r="1.2" style="--op:0.27;--dur:5.5s;--dly:4.6s"/>
+    <circle class="st" cx="307.0" cy="3.5" r="0.9" style="--op:0.32;--dur:3.8s;--dly:0.8s"/>
+    <circle class="st" cx="1086.9" cy="205.9" r="1.0" style="--op:0.37;--dur:4.3s;--dly:3.3s"/>
+    <circle class="st" cx="238.2" cy="134.4" r="1.3" style="--op:0.38;--dur:6.5s;--dly:1.9s"/>
+    <circle class="st" cx="699.7" cy="98.7" r="0.7" style="--op:0.27;--dur:6.3s;--dly:4.2s"/>
+    <circle class="st" cx="853.5" cy="296.4" r="0.8" style="--op:0.19;--dur:4.8s;--dly:1.4s"/>
+    <circle class="st" cx="256.9" cy="129.2" r="1.2" style="--op:0.27;--dur:4.3s;--dly:4.2s"/>
+    <circle class="st" cx="1178.4" cy="141.2" r="0.7" style="--op:0.16;--dur:6.5s;--dly:0.2s"/>
+    <circle class="st" cx="850.4" cy="178.0" r="0.9" style="--op:0.35;--dur:3.1s;--dly:0.7s"/>
+    <circle class="st" cx="545.8" cy="7.7" r="1.3" style="--op:0.21;--dur:3.6s;--dly:0.2s"/>
+    <circle class="st" cx="755.0" cy="139.3" r="1.2" style="--op:0.31;--dur:6.2s;--dly:4.8s"/>
+    <circle class="st" cx="821.4" cy="62.2" r="1.0" style="--op:0.19;--dur:3.0s;--dly:2.4s"/>
+    <circle class="st" cx="857.0" cy="55.9" r="0.8" style="--op:0.24;--dur:5.8s;--dly:2.6s"/>
+    <circle class="st" cx="737.3" cy="235.9" r="1.0" style="--op:0.35;--dur:6.6s;--dly:0.4s"/>
+    <circle class="st" cx="1119.1" cy="225.4" r="0.7" style="--op:0.26;--dur:5.5s;--dly:4.5s"/></g>
+
+  <path class="areafill" d="M90,196.0 C118.3,194.7 203.3,191.7 260.0,188.0 C316.7,184.3 373.3,180.0 430.0,174.0 C486.7,168.0 543.3,160.3 600.0,152.0 C656.7,143.7 713.3,133.0 770.0,124.0 C826.7,115.0 883.3,106.3 940.0,98.0 C996.7,89.7 1081.7,78.0 1110.0,74.0 L1110,312 L90,312 Z"/>
+  <path class="curve" id="arc" d="M90,196.0 C118.3,194.7 203.3,191.7 260.0,188.0 C316.7,184.3 373.3,180.0 430.0,174.0 C486.7,168.0 543.3,160.3 600.0,152.0 C656.7,143.7 713.3,133.0 770.0,124.0 C826.7,115.0 883.3,106.3 940.0,98.0 C996.7,89.7 1081.7,78.0 1110.0,74.0"/>
+
+  <circle class="glint" r="4">
+    <animateMotion dur="6s" begin="2.9s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+      <mpath href="#arc"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="6s" begin="2.9s" repeatCount="indefinite"/>
+  </circle>
+
+  <g><g class="nd" style="--dly:0.90s"><circle class="ring" cx="90" cy="196" r="6.5"/><circle class="core" cx="90" cy="196" r="2.4"/><line class="tick" x1="90" y1="209" x2="90" y2="220"/></g><g class="nd" style="--dly:1.16s"><circle class="ring" cx="260" cy="188" r="6.5"/><circle class="core" cx="260" cy="188" r="2.4"/><line class="tick" x1="260" y1="201" x2="260" y2="212"/></g><g class="nd" style="--dly:1.42s"><circle class="ring" cx="430" cy="174" r="6.5"/><circle class="core" cx="430" cy="174" r="2.4"/><line class="tick" x1="430" y1="187" x2="430" y2="198"/></g><g class="nd" style="--dly:1.68s"><circle class="ring" cx="600" cy="152" r="6.5"/><circle class="core" cx="600" cy="152" r="2.4"/><line class="tick" x1="600" y1="165" x2="600" y2="176"/></g><g class="nd" style="--dly:1.94s"><circle class="ring" cx="770" cy="124" r="6.5"/><circle class="core" cx="770" cy="124" r="2.4"/><line class="tick" x1="770" y1="137" x2="770" y2="148"/></g><g class="nd" style="--dly:2.20s"><circle class="ring" cx="940" cy="98" r="6.5"/><circle class="core" cx="940" cy="98" r="2.4"/><line class="tick" x1="940" y1="111" x2="940" y2="122"/></g><g class="nd" style="--dly:2.46s"><circle class="now" cx="1110" cy="74" r="15"/><circle class="ring last" cx="1110" cy="74" r="8"/><circle class="core" cx="1110" cy="74" r="3.2"/><line class="tick" x1="1110" y1="90" x2="1110" y2="98"/></g></g>
+  <g><g class="lb" style="--dly:1.08s"><text class="date" x="90" y="236">AUG 2025</text><text class="ttl"  x="90" y="253">First commit</text><text class="sub" x="90" y="269">724 B of HTML</text></g><g class="lb" style="--dly:1.34s"><text class="date" x="260" y="228">NOV 2025</text><text class="ttl"  x="260" y="245">IdeaGuard</text><text class="sub" x="260" y="261">local LLM · Docker sandbox</text></g><g class="lb" style="--dly:1.60s"><text class="date" x="430" y="214">JAN 2026</text><text class="ttl"  x="430" y="231">Vanilla JS apps</text><text class="sub" x="430" y="247">state machines, no framework</text></g><g class="lb" style="--dly:1.86s"><text class="date" x="600" y="192">MAR 2026</text><text class="ttl"  x="600" y="209">Restaurant OS</text><text class="sub" x="600" y="225">React · FastAPI · Postgres</text></g><g class="lb" style="--dly:2.12s"><text class="date" x="770" y="164">JUN 2026</text><text class="ttl"  x="770" y="181">TruthFrame</text><text class="sub" x="770" y="197">6-stage agent pipeline · 24 h</text></g><g class="lb" style="--dly:2.38s"><text class="date" x="940" y="138">JUL 2026</text><text class="ttl"  x="940" y="155">TrustChain +</text><text class="ttl" x="940" y="170">NeuralGuard</text><text class="sub" x="940" y="186">on-chain audit · self-healing</text></g><g class="lb" style="--dly:2.64s"><text class="date" x="1110" y="114">AUG 2026</text><text class="ttl"  x="1110" y="131">OmniTrace</text><text class="sub" x="1110" y="147">multimodal evidence fabric</text></g></g>
+
+  <text class="cap" x="70" y="38">TWELVE  MONTHS</text>
+  <text class="cap capr" x="1130" y="38">183 COMMITS  ·  15 PUBLIC REPOS</text>
+  <rect x="0" y="0" width="1200" height="1.2" fill="url(#rail)" opacity=".5"/>
+</svg>
